@@ -1,0 +1,33 @@
+<div>
+<form  [formGroup]="user" (ngSubmit)="loginUser()">
+
+<label id="fname">first Name</label>
+<input type="text" id="fname" formControlName="firstName"  >
+<span class="text-danger" *ngIf=" firstName.touched && firstName.invalid">
+Name is required
+</span>
+<label id="lname">last Name</label>
+<input type="text" id="lname" formControlName="lastName">
+<span class="text-danger" *ngIf=" lastName.touched && lastName.invalid">
+lastName is required
+</span>
+<label id="email">email</label>
+<input type="text" id="email" formControlName="email">
+<span class="text-danger" *ngIf=" email.touched && email.invalid">
+  Email is required
+  </span>
+<label for="password">Password</label>
+<input type="text" id="password" formControlName="password">
+<span class="text-danger" *ngIf=" password.touched && password.invalid">
+  password is required
+  </span>
+<label for="confirmpassword">Confirm password</label>
+<input type="text" id="confirmpassword" formControlName="confirmpassword">
+<span class="text-danger" *ngIf=" confirmpassword.touched && confirmpassword.invalid">
+  ConFirmpassword is required
+  </span>
+<!-- <input type="input" formControlName="address" >
+<button formControlName="address" (click)="addAddress()">add</button> -->
+<button type="submit" class="btn btn-default" [disabled]="!user.valid">Submit</button>
+</form>
+</div>
